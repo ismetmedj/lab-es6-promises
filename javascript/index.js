@@ -73,6 +73,9 @@ getInstruction(
                         document.querySelector(
                           "#mashedPotatoes"
                         ).innerHTML += `<li>Mashed potatoes are ready!</li>`;
+                        const potatoes =
+                          document.getElementById("mashedPotatoesImg");
+                        potatoes.removeAttribute("hidden");
                       },
                       (error) => console.log(error)
                     );
@@ -130,6 +133,9 @@ obtainInstruction("steak", 0)
                                 document.querySelector(
                                   "#steak"
                                 ).innerHTML += `<li>Stake is ready!</li>`;
+                                const steak =
+                                  document.getElementById("steakImg");
+                                steak.removeAttribute("hidden");
                               })
                               .catch((error) => console.log(error));
                           })
@@ -167,6 +173,9 @@ async function makeBroccoli() {
   document.querySelector(
     "#broccoli"
   ).innerHTML += `<li>Broccoli is ready!</li>`;
+
+  const broccoli = document.getElementById("broccoliImg");
+  broccoli.removeAttribute("hidden");
 }
 
 makeBroccoli();
