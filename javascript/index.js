@@ -182,3 +182,68 @@ makeBroccoli();
 
 // Bonus 2 - Promise all
 // ...
+
+// Promise.all.forEach(element => {
+//   document.querySelector(
+//     "#brusselsSprouts"
+//   ).innerHTML += `<li>${element}</li>`;
+
+// });
+
+// Promise.all( [promise1, promise2, promise3] )
+// .then((values) => { // Resolved value is an array
+//  console.log("promise1 value: ", values[0] );
+//  console.log("promise2 value: ", values[1] );
+//  console.log("promise3 value: ", values[2] );
+// })
+// .catch((error) => {})
+
+// let brussels1 = await obtainInstruction("broccoli", i);
+
+// for ( let i =0; i < brusselsSprouts.length ; i++){
+
+Promise.all([
+  obtainInstruction("brusselsSprouts", 0),
+  obtainInstruction("brusselsSprouts", 1),
+  obtainInstruction("brusselsSprouts", 2),
+  obtainInstruction("brusselsSprouts", 3),
+  obtainInstruction("brusselsSprouts", 4),
+  obtainInstruction("brusselsSprouts", 5),
+  obtainInstruction("brusselsSprouts", 6),
+  obtainInstruction("brusselsSprouts", 7),
+])
+  .then((values) => {
+    document.querySelector(
+      "#brusselsSprouts"
+    ).innerHTML += `<li>${values[0]}</li>`;
+    document.querySelector(
+      "#brusselsSprouts"
+    ).innerHTML += `<li>${values[1]}</li>`;
+    document.querySelector(
+      "#brusselsSprouts"
+    ).innerHTML += `<li>${values[2]}</li>`;
+    document.querySelector(
+      "#brusselsSprouts"
+    ).innerHTML += `<li>${values[3]}</li>`;
+    document.querySelector(
+      "#brusselsSprouts"
+    ).innerHTML += `<li>${values[4]}</li>`;
+    document.querySelector(
+      "#brusselsSprouts"
+    ).innerHTML += `<li>${values[5]}</li>`;
+    document.querySelector(
+      "#brusselsSprouts"
+    ).innerHTML += `<li>${values[6]}</li>`;
+    document.querySelector(
+      "#brusselsSprouts"
+    ).innerHTML += `<li>${values[7]}</li>`;
+    document.querySelector(
+      "#brusselsSprouts"
+    ).innerHTML += `<li>Brussels sprouts are ready!</li>`;
+
+    const brussels = document.getElementById("brusselsSproutsImg");
+    brussels.removeAttribute("hidden");
+  })
+  .catch((error) => {});
+
+// }
